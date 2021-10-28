@@ -5,12 +5,17 @@ import {
   View
 } from 'react-native';
 
+import { Header } from '../../components/Header';
+import { MessageList } from '../../components/MessageList';
+
 import { styles } from './styles';
 
-export function Home(){
+export function Home() {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <Header />
+
+      <MessageList />
     </View>
   );
 }
