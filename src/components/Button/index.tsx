@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   TouchableOpacityProps,
+  ActivityIndicator
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'
 
@@ -33,8 +34,14 @@ export function Button({
       style={[styles.button, { backgroundColor }]}
       {...rest}
     >
-      <AntDesign name={icon} size={24} style={styles.icon} />
-      <Text style={[styles.title, { color }]}>{title}</Text>
+      {isLoading ? (
+        <ActivityIndicator color={color} />
+      ) : (
+        <>
+          <AntDesign name={icon} size={24} style={styles.icon} />
+          <Text style={[styles.title, { color }]}>{title}</Text>
+        </>
+      )}
     </TouchableOpacity>
   );
 }
