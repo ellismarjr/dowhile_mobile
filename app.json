@@ -3,6 +3,7 @@
     "name": "dowhile_mobile",
     "slug": "dowhile_mobile",
     "version": "1.0.0",
+    "scheme": "dowhile_mobile",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
