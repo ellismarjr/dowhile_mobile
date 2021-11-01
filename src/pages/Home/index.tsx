@@ -1,7 +1,8 @@
 import React from 'react';
 
 import {
-  Text,
+  KeyboardAvoidingView,
+  Platform,
   View
 } from 'react-native';
 
@@ -16,12 +17,17 @@ import { styles } from './styles';
 export function Home() {
   const { user } = useAuth();
   return (
-    <View style={styles.container}>
-      <Header />
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
+      <View style={styles.container}>
+        <Header />
 
-      <MessageList />
+        <MessageList />
 
-      {!!user ? <SendMessageForm /> : <SignInBox />}
-    </View>
+        {!!user ? <SendMessageForm /> : <SignInBox />}
+      </View>
+    </KeyboardAvoidingView>
   );
 }
